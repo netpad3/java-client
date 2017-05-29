@@ -1,0 +1,13 @@
+<project name="netpad3-java-client" default="jar">
+	<property name="src" location="src" />
+	<property name="build" location="out" />
+	<property name="dist" location="dist" />
+	<target name="compile">
+		<mkdir dir="${build}" />
+		<javac srcdir="${src}" destdir="${build}" />
+	</target>
+	<target name="jar" depends="compile">
+		<mkdir dir="${dist}" />
+		<jar jarfile="${dist}/netpad3-java-client.jar" basedir="${build}" manifest="MANIFEST.MF" />
+	</target>
+</project>
